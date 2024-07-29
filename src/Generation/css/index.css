@@ -1,0 +1,50 @@
+#root .wrap-feed {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  height: 30vh;
+  margin-top: 60px;
+}
+#root .wrap-feed .section-generaiton {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+#root .wrap-feed .section-generaiton > * {
+  margin: 1em;
+  min-height: 30px;
+}
+#root .wrap-feed .section-generaiton .input-nickname {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+#root .wrap-feed .section-generaiton .input-nickname .label-nickname {
+  position: relative;
+  top: 0.5em;
+}
+#root .wrap-feed .section-generaiton .input-nickname .inner-nickname {
+  display: flex;
+  flex-direction: column;
+}
+#root .wrap-feed .section-generaiton .input-nickname .inner-nickname > input {
+  margin-bottom: 0.3em;
+}
+#root .wrap-feed .section-generaiton .input-nickname .inner-nickname .btn-submit {
+  margin: 1em 0em 0em 0.5em;
+  padding: 0.3em;
+  width: 7em;
+  font-size: 1em;
+  background-color: black;
+  border: 0;
+  color: azure;
+}
+#root .wrap-feed .section-generaiton .input-nickname .inner-nickname .btn-submit:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+#root .wrap-feed .section-result > * {
+  margin: 1em;
+  min-height: 30px;
+}/*# sourceMappingURL=index.css.map */
