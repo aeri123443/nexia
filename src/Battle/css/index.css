@@ -1,0 +1,74 @@
+#root .wrap-feed {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+  height: 30vh;
+  margin-top: 60px;
+}
+#root .wrap-feed .section-character {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+#root .wrap-feed .section-character > * {
+  margin: 1em;
+  min-height: 30px;
+}
+#root .wrap-feed .section-character .input-name input[type=text] {
+  margin-left: 0.5em;
+  width: 7em;
+  margin-right: 1em;
+  border: 0;
+  border-bottom: 1px solid gray;
+  outline: none;
+  font-size: 1em;
+}
+#root .wrap-feed .section-character .input-name .btn-submit {
+  height: 100%;
+  background-color: black;
+  border: 0;
+  font-size: 1em;
+  color: azure;
+}
+#root .wrap-feed .section-character .input-name .btn-submit:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+#root .wrap-feed .section-character .output-info {
+  display: flex;
+  flex-direction: row;
+}
+#root .wrap-feed .section-character .output-info .info-custom {
+  margin-left: 0.5em;
+}
+#root .wrap-feed .section-result {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  border-left: 1px solid black;
+}
+#root .wrap-feed .section-result > * {
+  margin: 1em;
+}
+#root .wrap-feed .section-result .result-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#root .wrap-feed .section-result .result-inner > img {
+  width: 1em;
+  height: 1em;
+}
+#root .wrap-feed .section-result .result-inner .result-custom {
+  margin-left: 1em;
+}
+#root .wrap-feed .section-result .result-inner .result-result {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+  color: green;
+  font-size: 2rem;
+}/*# sourceMappingURL=index.css.map */

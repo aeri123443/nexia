@@ -1,0 +1,90 @@
+#root{
+    .wrap-feed{
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+        height: 30vh;
+        margin-top: 60px;
+
+        .section-character{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content:space-between;
+
+            &>*{
+                margin: 1em ;
+                min-height: 30px;
+            }
+            .input-name{
+                input[type=text]{
+                    margin-left: .5em;
+                    width: 7em;
+                    margin-right: 1em;
+                    border: 0;
+                    border-bottom: 1px solid gray;
+                    outline: none;
+                    font-size: 1em;
+                }
+      
+                .btn-submit{
+                    height: 100%;
+                    background-color: black;
+                    border: 0;
+                    font-size: 1em;
+                    color: azure;
+
+                    &:hover{
+                        cursor: pointer;
+                        background-color: gray;
+                    }
+                }
+            }
+
+            .output-info{
+                display: flex;
+                flex-direction: row;
+                .info-custom{
+                margin-left: .5em;
+
+                }
+            }
+        }
+
+        .section-result{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content:space-between;
+            border-left: 1px solid black;
+
+            &>*{
+                margin: 1em;
+            }
+
+            .result-inner{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                &>img{
+                    width: 1em;
+                    height: 1em;
+                } 
+                .result-custom{
+                    margin-left: 1em;
+
+                }
+
+                .result-result {
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    margin: 0;
+                    color: green;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
