@@ -10,7 +10,7 @@ function Header() {
         <div className='header'>
             <div className='wrap'>
                 <div className='logo'>
-                    Ryanguni Commu
+                    NEXIA
                 </div>
                 <div className='gnb'>
                 <ul className='gnb-ul'>
