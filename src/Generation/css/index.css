@@ -44,6 +44,16 @@
   cursor: pointer;
   background-color: gray;
 }
+#root .wrap-feed .section-generaiton .input-nickname .inner-nickname .check-gen-input {
+  margin-top: 1em;
+  margin-left: 0.5em;
+  color: black;
+  font-weight: lighter;
+}
+#root .wrap-feed .section-generaiton .input-nickname .inner-nickname .check-gen-input.input-warning {
+  color: red;
+  font-weight: bold;
+}
 #root .wrap-feed .section-result > * {
   margin: 1em;
   min-height: 30px;
