@@ -1,0 +1,74 @@
+#root{
+   .wrap-feed{
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+        height: 30vh;
+        margin-top: 60px;
+
+        .section-generaiton{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content:space-between;
+            
+            &>*{
+                margin: 1em;
+                min-height: 30px;
+            }
+
+            .input-name{
+                input{
+
+                }
+            }
+
+            .input-nickname{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+
+                .label-nickname{
+                    position: relative;
+                    top: .5em;
+                }
+                .inner-nickname{
+                    display: flex;
+                    flex-direction: column;
+
+                    &>input{
+                        margin-bottom: .3em;
+                    }
+
+                    .btn-submit{
+                        margin: 1em 0em 0em .5em;
+                        padding: .3em;
+                        width: 7em;
+                        font-size: 1em;
+                        background-color: black;
+                        border: 0;
+                        color: azure;
+    
+                        &:hover{
+                            cursor: pointer;
+                            background-color: gray;
+                        }
+                    }
+                }
+            }
+        }
+
+        .section-result{
+
+            &>*{
+                margin: 1em;
+                min-height: 30px;
+            }
+            .result-inner{
+                .result-custom{
+
+                }
+            }
+        }
+   }
+}
