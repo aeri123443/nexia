@@ -1,31 +1,38 @@
 import React from 'react'
 import './css/index.css';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 function Header() {
     const location = useLocation();
     const path = location.pathname;
+    const history = useHistory();
+
+    const menuClick = (url) => {
+        history.push(url);
+    };
 
     return (
         <div className='header'>
             <div className='header-left'>
                 <div className='logo'>
                 <img src={`${process.env.PUBLIC_URL}/assets/logo.png`} alt='전투'/>
-
                 </div>
             </div>
             <div className='header-middle'>
                 <ul className='gnb'>
-                     <li className={`gnb-battle ${path === '/battle' ? 'active' : ''}`} >
-                         <Link to="/battle">전투</Link>
-                    </li>
+                    <li 
+                        className={`gnb-battle ${path === '/battle' ? 'active' : ''}`} 
+                        onClick={() => menuClick('/battle')}
+                    > 전투 </li>
                      <span className='separator'>|</span>
-                     <li className={`gnb-generation ${path === '/gen' ? 'active' : ''}`} >
-                        <Link to="/gen">캐릭터 생성</Link>
-                     </li>
+                    <li 
+                        className={`gnb-generation ${path === '/gen' ? 'active' : ''}`}
+                        onClick={() => menuClick('/gen')}
+                    > 캐릭터 생성 </li>
                      <span className='separator'>|</span>
-                     <li className={`gnb-history ${path === '/history' ? 'active' : ''}`} >
-                         <Link to="/history">히스토리</Link>
-                     </li>
+                    <li 
+                        className={`gnb-history ${path === '/history' ? 'active' : ''}`}
+                        onClick={() => menuClick('/history')}
+                    > 히스토리 </li>
                 </ul>
             </div>
             <div className='header-right'>
