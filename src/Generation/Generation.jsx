@@ -1,4 +1,3 @@
-// 인풋값 체크하고 데이터베이스 저장
 import React, {useState} from 'react'
 import './css/index.css';
 
@@ -18,10 +17,27 @@ function Generation() {
         resultUserTotal: " / ",
     });
 
+    const [rollDate, setRollTime] = useState('');
+ 
     const [inputWarning, setInputWarning] = useState(false);
 
     const {userName, userNick1, userNick2, userNick3} = inputs;
-    // const {resultUserName, resultUserMental, resultUserPhysical, resultUserSpecial, resultUserTotal} = outputs;
+
+    const createDateStr = () => {
+        const today = new Date();
+        let todayMonth = today.getMonth()+1;
+        let todayDate = today.getDate();
+        let todayHours = today.getHours();
+        let todayMins = today.getMinutes();
+
+        todayMonth = todayMonth<10 ? `0${todayMonth}` : todayMonth;
+        todayDate = todayDate<10 ? `0${todayDate}` : todayDate;
+        todayHours = todayHours<10 ? `0${todayHours}` : todayHours;
+        todayMins = todayMins<10 ? `0${todayMins}` : todayMins;
+
+        const strDate = `${todayMonth}/${todayDate} ${todayHours}:${todayMins}`
+        setRollTime(strDate);
+    };
 
     const validateGenInput = () => {
         console.log('validateGenInput...');
@@ -48,6 +64,7 @@ function Generation() {
 
     const generateCharacter = () => {
         console.log(userName, userNick1, userNick2, userNick3);
+        createDateStr();
         if (!validateGenInput()) {
             const randNums = [
                 ( Math.floor(Math.random() * 10)+1),
@@ -84,60 +101,66 @@ function Generation() {
     }
 
   return (
-    <div>
+    <div className='gen-feed'>
         <div className='wrap-feed'>
-            <div className='section-generaiton'>
-                <div className='input-name'>
-                    이름:
-                    <input name='userName' type='text' value={userName} onChange={inputGenChange} required />
-                </div>
-                <div className='input-nickname'>
-                    <div className='label-nickname'>
-                        별명:
+            <div className='feed-left'>
+                <div className='feed-items'>
+                    <div className='txt-label'>이름:</div> 
+                    <div className='input-field'>
+                        <input name='userName' type='text' value={userName} onChange={inputGenChange} required />
+                        <div className={inputWarning ? 'check-gen-input input-warning' : 'check-gen-input'}>
+                            * 이름은 필수 항목입니다.
+                        </div>
                     </div>
-                    <div className='inner-nickname'>
+                </div>
+                <div className='feed-items'>
+                    <div className='txt-label'>별명:</div>
+                    <div className='input-field'>
                         <input name='userNick1' type='text' value={userNick1} onChange={inputGenChange} required />
                         <input name='userNick2' type='text' value={userNick2} onChange={inputGenChange} required />
                         <input name='userNick3' type='text' value={userNick3} onChange={inputGenChange} required />
                         <button onClick={generateCharacter} className='btn-submit'>
                             등록
                         </button>
-                        <div className={inputWarning ? 'check-gen-input input-warning' : 'check-gen-input'} >이름은 필수 항목입니다.</div>
                     </div>
                 </div>
             </div>
-            <div className='section-result'>
-                <div className='result-inner'>
-                    이름:
-                    <div className='result-mental result-custom'>
+            <div className='feed-right'>
+                <div className='feed-items'>
+                    <div className='txt-label'>이름:</div>
+                    <div className='gen-result'>
                         {genResult.resultUserName}
-                    </div>
+                    </div> 
                 </div>
-                <div className='result-inner'>
-                    정신:
-                    <div className='result-mental result-custom'>
+                <div className='feed-items'>
+                    <div className='txt-label'>정신:</div>
+                    <div className='gen-result'>
                         {genResult.resultUserMental}
-                    </div>
+                    </div> 
                 </div>
-                <div className='result-inner'>
-                    신체:
-                    <div className='result-mental result-custom'>
+                <div className='feed-items'>
+                    <div className='txt-label'>신체:</div>
+                    <div className='gen-result'>
                         {genResult.resultUserPhysical}
-                    </div>
+                    </div> 
                 </div>
-                <div className='result-inner'>
-                    특수:
-                    <div className='result-mental result-custom'>
+                <div className='feed-items'>
+                    <div className='txt-label'>특수:</div>
+                    <div className='gen-result'>
                         {genResult.resultUserSpecial}
-                    </div>
+                    </div> 
                 </div>
-                <div className='result-inner'>
-                    평가:
-                    <div className='result-mental result-custom'>
+                <div className='feed-items'>
+                    <div className='txt-label'>평가:</div>
+                    <div className='gen-result'>
                         {genResult.resultUserTotal}
-                    </div>
+                    </div> 
                 </div>
             </div>
+        </div>
+        <div className='feed-bottom'>
+            <div className='roll-date'>Gen. Date:</div>
+            <div className='roll-date'>{rollDate}</div>
         </div>
     </div>
   )

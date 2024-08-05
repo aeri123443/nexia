@@ -1,74 +1,98 @@
-#root .wrap-feed {
-  display: flex;
-  flex-direction: row;
-  width: 90vw;
-  height: 30vh;
-  margin-top: 60px;
+#root .battle-feed {
+  width: 100%;
+  padding: 0 2em;
+  box-sizing: border-box;
 }
-#root .wrap-feed .section-character {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: space-between;
-}
-#root .wrap-feed .section-character > * {
-  margin: 1em;
-  min-height: 30px;
-}
-#root .wrap-feed .section-character .input-name input[type=text] {
-  margin-left: 0.5em;
-  width: 7em;
-  margin-right: 1em;
-  border: 0;
-  border-bottom: 1px solid gray;
-  outline: none;
-  font-size: 1em;
-}
-#root .wrap-feed .section-character .input-name .btn-submit {
+#root .battle-feed .wrap-feed {
+  width: 100%;
   height: 100%;
-  background-color: black;
-  border: 0;
-  font-size: 1em;
-  color: azure;
-}
-#root .wrap-feed .section-character .input-name .btn-submit:hover {
-  cursor: pointer;
-  background-color: gray;
-}
-#root .wrap-feed .section-character .output-info {
+  margin-top: 2em;
   display: flex;
   flex-direction: row;
+  justify-content: stretch;
 }
-#root .wrap-feed .section-character .output-info .info-custom {
-  margin-left: 0.5em;
-}
-#root .wrap-feed .section-result {
+#root .battle-feed .wrap-feed .feed-left {
   display: flex;
   flex-direction: column;
-  flex: 1;
   justify-content: space-between;
-  border-left: 1px solid black;
+  width: 100%;
+  border-right: 1.7px solid #BBB;
 }
-#root .wrap-feed .section-result > * {
-  margin: 1em;
-}
-#root .wrap-feed .section-result .result-inner {
+#root .battle-feed .wrap-feed .feed-left .feed-items {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 2em;
+  gap: 0.5em;
 }
-#root .wrap-feed .section-result .result-inner > img {
-  width: 1em;
+#root .battle-feed .wrap-feed .feed-left .feed-items > input {
+  margin: 0;
+}
+#root .battle-feed .wrap-feed .feed-left .feed-items > .btn-submit {
+  display: flex;
+  align-items: center;
+  height: 1.5em;
+  margin-left: 0.5em;
+  color: white;
+  font-size: 1em;
+  line-height: 0;
+  padding: 0.3em;
+  background-color: black;
+  transition: all 0.2s ease;
+  border: 0;
+}
+#root .battle-feed .wrap-feed .feed-left .feed-items > .btn-submit:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #BBB;
+}
+#root .battle-feed .wrap-feed .feed-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-left: 1em;
+  box-sizing: border-box;
+}
+#root .battle-feed .wrap-feed .feed-right .feed-items-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  min-width: 50%;
+  height: 2em;
+  gap: 0.5em;
+  font-size: 1.5em;
+}
+#root .battle-feed .wrap-feed .feed-right .feed-items-center .img-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+#root .battle-feed .wrap-feed .feed-right .feed-items-center .img-label > img {
   height: 1em;
 }
-#root .wrap-feed .section-result .result-inner .result-custom {
-  margin-left: 1em;
-}
-#root .wrap-feed .section-result .result-inner .result-result {
+#root .battle-feed .wrap-feed .feed-right .feed-items-center .battle-result {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  height: 100%;
+  line-height: 0;
+}
+#root .battle-feed .feed-bottom {
+  width: 100%;
+  height: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
   align-content: center;
-  margin: 0;
-  color: green;
-  font-size: 2rem;
+  justify-content: flex-end;
+  color: #BBB;
+}
+#root .battle-feed .feed-bottom .roll-date {
+  display: flex;
+  align-items: center;
+  min-width: 5em;
 }/*# sourceMappingURL=index.css.map */
