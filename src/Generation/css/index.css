@@ -1,60 +1,110 @@
-#root .wrap-feed {
+#root .gen-feed {
+  width: 100%;
+  padding: 0 2em;
+  box-sizing: border-box;
+}
+#root .gen-feed .wrap-feed {
+  width: 100%;
+  height: 100%;
+  margin-top: 2em;
   display: flex;
   flex-direction: row;
-  width: 90vw;
-  height: 30vh;
-  margin-top: 60px;
+  justify-content: stretch;
 }
-#root .wrap-feed .section-generaiton {
+#root .gen-feed .wrap-feed .feed-left {
   display: flex;
   flex-direction: column;
-  flex: 1;
   justify-content: space-between;
+  width: 100%;
+  border-right: 1.7px solid #BBB;
+  gap: 0.5em;
+  height: 100%;
 }
-#root .wrap-feed .section-generaiton > * {
-  margin: 1em;
-  min-height: 30px;
-}
-#root .wrap-feed .section-generaiton .input-nickname {
+#root .gen-feed .wrap-feed .feed-left .feed-items {
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
-#root .wrap-feed .section-generaiton .input-nickname .label-nickname {
-  position: relative;
-  top: 0.5em;
+#root .gen-feed .wrap-feed .feed-left .feed-items .txt-label {
+  display: flex;
+  align-items: center;
+  height: 2em;
 }
-#root .wrap-feed .section-generaiton .input-nickname .inner-nickname {
+#root .gen-feed .wrap-feed .feed-left .feed-items .input-field {
   display: flex;
   flex-direction: column;
+  gap: 0.3em;
+  width: 50%;
 }
-#root .wrap-feed .section-generaiton .input-nickname .inner-nickname > input {
-  margin-bottom: 0.3em;
-}
-#root .wrap-feed .section-generaiton .input-nickname .inner-nickname .btn-submit {
-  margin: 1em 0em 0em 0.5em;
-  padding: 0.3em;
-  width: 7em;
-  font-size: 1em;
-  background-color: black;
-  border: 0;
-  color: azure;
-}
-#root .wrap-feed .section-generaiton .input-nickname .inner-nickname .btn-submit:hover {
-  cursor: pointer;
-  background-color: gray;
-}
-#root .wrap-feed .section-generaiton .input-nickname .inner-nickname .check-gen-input {
-  margin-top: 1em;
+#root .gen-feed .wrap-feed .feed-left .feed-items .input-field > * {
+  height: 2em;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   margin-left: 0.5em;
-  color: black;
-  font-weight: lighter;
 }
-#root .wrap-feed .section-generaiton .input-nickname .inner-nickname .check-gen-input.input-warning {
+#root .gen-feed .wrap-feed .feed-left .feed-items .input-field .check-gen-input {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+  color: #666;
+  font-weight: 300;
+  transition: all 0.1s linear;
+}
+#root .gen-feed .wrap-feed .feed-left .feed-items .input-field .check-gen-input.input-warning {
+  font-weight: 500;
   color: red;
-  font-weight: bold;
 }
-#root .wrap-feed .section-result > * {
-  margin: 1em;
-  min-height: 30px;
+#root .gen-feed .wrap-feed .feed-left .feed-items .input-field > .btn-submit {
+  border: 0;
+  margin-top: 1em;
+  background-color: black;
+  color: white;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+#root .gen-feed .wrap-feed .feed-left .feed-items .input-field > .btn-submit:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #BBB;
+}
+#root .gen-feed .wrap-feed .feed-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-left: 1em;
+  box-sizing: border-box;
+}
+#root .gen-feed .wrap-feed .feed-right > .feed-items {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#root .gen-feed .wrap-feed .feed-right > .feed-items .txt-label {
+  display: flex;
+  align-items: center;
+  height: 2em;
+}
+#root .gen-feed .wrap-feed .feed-right > .feed-items .gen-result {
+  margin-left: 0.5em;
+}
+#root .gen-feed .feed-bottom {
+  width: 100%;
+  height: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: flex-end;
+  color: #BBB;
+}
+#root .gen-feed .feed-bottom .roll-date {
+  display: flex;
+  align-items: center;
+  min-width: 5em;
 }/*# sourceMappingURL=index.css.map */

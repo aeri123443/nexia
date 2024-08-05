@@ -1,56 +1,76 @@
 #root {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
   font-size: 24px;
   line-height: 0;
   width: 100vw;
   height: 100vh;
 }
 #root .header {
-  height: 60px;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  width: 90%;
-  top: 0;
-  border-bottom: 1px solid black;
-}
-#root .header .wrap {
+  width: 100%;
+  height: 4em;
+  padding: 0.5em 2em;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  min-width: 50%;
-  height: 90%;
+  border-bottom: 1.7px solid #BBB;
 }
-#root .header .wrap .logo {
-  width: 200px;
+#root .header .header-left {
+  height: 100%;
 }
-#root .header .wrap .gnb .gnb-ul {
-  position: relative;
+#root .header .header-left .logo {
+  height: 100%;
+}
+#root .header .header-left .logo > img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#root .header .header-middle {
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+}
+#root .header .header-middle .gnb {
+  display: flex;
   align-items: center;
   height: 100%;
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
 }
-#root .header .wrap .gnb .gnb-ul a {
+#root .header .header-middle .gnb > li {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  color: black;
+  height: 50%;
+  padding: 0 0.5em;
+  border-radius: 1em;
+  transition: all 0.2s linear;
+}
+#root .header .header-middle .gnb > li > a {
   color: inherit;
   text-decoration: none;
 }
-#root .header .wrap .gnb .gnb-ul .gnb-li {
-  padding: 10px;
-  margin: 0 0.5em;
-  height: 100%;
-  border-radius: 10px;
-}
-#root .header .wrap .gnb .gnb-ul .gnb-li:hover {
-  background-color: #e6e6e6 !important;
-  color: black !important;
-  cursor: pointer !important;
-}
-#root .header .wrap .gnb .gnb-ul .gnb-li.active {
+#root .header .header-middle .gnb > li.active {
   background-color: black;
-  color: azure;
+  color: white;
+}
+#root .header .header-middle .gnb > li:hover {
+  cursor: pointer;
+  color: black;
+  background-color: #e6e6e6;
+}
+#root .header .header-right {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+#root .header .header-right .icon-header-right > img {
+  width: 1.5em;
+  height: 1.5em;
 }/*# sourceMappingURL=index.css.map */
