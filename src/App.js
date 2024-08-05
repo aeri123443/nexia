@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 import Battle from './Battle/Battle';
 import Header from './Header/Header';
@@ -16,11 +16,9 @@ function App() {
         <Route path="/battle" exact component={Battle} />
         <Route path="/gen" exact component={Generation} />
         <Route path="/history" exact component={Historys} />
-
       </Switch>
     </Router>
   );
 }
 
 export default App;
-
