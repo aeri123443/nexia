@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/nexia/static/css/main.3b1593a2.css",
-    "main.js": "/nexia/static/js/main.61cfcc34.js",
+    "main.css": "/nexia/static/css/main.1be66cc7.css",
+    "main.js": "/nexia/static/js/main.58e7b0cc.js",
     "static/js/453.ed0deaa1.chunk.js": "/nexia/static/js/453.ed0deaa1.chunk.js",
     "index.html": "/nexia/index.html",
-    "main.3b1593a2.css.map": "/nexia/static/css/main.3b1593a2.css.map",
-    "main.61cfcc34.js.map": "/nexia/static/js/main.61cfcc34.js.map",
+    "main.1be66cc7.css.map": "/nexia/static/css/main.1be66cc7.css.map",
+    "main.58e7b0cc.js.map": "/nexia/static/js/main.58e7b0cc.js.map",
     "453.ed0deaa1.chunk.js.map": "/nexia/static/js/453.ed0deaa1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b1593a2.css",
-    "static/js/main.61cfcc34.js"
+    "static/css/main.1be66cc7.css",
+    "static/js/main.58e7b0cc.js"
   ]
 }
