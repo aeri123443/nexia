@@ -50,6 +50,7 @@
   line-height: 0;
   color: #666;
   font-weight: 300;
+  font-size: 18px;
   transition: all 0.1s linear;
 }
 #root .gen-feed .wrap-feed .feed-left .feed-items .input-field .check-gen-input.input-warning {
@@ -107,4 +108,4 @@
   display: flex;
   align-items: center;
   min-width: 5em;
-}/*# sourceMappingURL=index.css.map */
+}
