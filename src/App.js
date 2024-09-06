@@ -11,7 +11,7 @@ function App() {
   return (
     <Router basename="/nexia">
       <Header />
-      <SubMenu />
+      {/* <SubMenu /> */}
       <Switch>
         <Route path="/" exact component={Battle} />
         <Route path="/battle" exact component={Battle} />

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {putUserData} from '../Utils/userDB.js';
 import './css/index.css';
 
 function Generation() {
@@ -50,20 +51,16 @@ function Generation() {
         }
     };
 
-    const inputGenChange = (e) =>{
-        const {value, name} = e.target;
-        console.log(value, name);
-        setInputs({
-            ...inputs,
+    const inputGenChange = (event) =>{
+        const { name, value } = event.target;
+
+        setInputs((prevInputs)=>({
+            ...prevInputs,
             [name]: value,
-        })
-        setGenResult({
-            resultUserName: userName,
-        })
+        }));
     };
 
     const generateCharacter = () => {
-        console.log(userName, userNick1, userNick2, userNick3);
         createDateStr();
         if (!validateGenInput()) {
             const randNums = [
@@ -82,13 +79,33 @@ function Generation() {
                 'X';
     
             setGenResult({
-                resultUserName: userName,
+                resultUserName: inputs.userName,
                 resultUserMental: randNums[0],
                 resultUserPhysical: randNums[1],
                 resultUserSpecial: randNums[2],
                 resultUserTotal: `${totalNum}/${totalClass}`
             });
-    
+
+            console.log({ 
+                userName: inputs.userName, 
+                date: rollDate, 
+                level: totalClass, 
+                mental: randNums[0],
+                physical: randNums[1], 
+                special: randNums[2], 
+                total: totalNum
+            })
+
+            putUserData({ 
+                userName: inputs.userName, 
+                date: rollDate, 
+                level: totalClass, 
+                mental: randNums[0],
+                physical: randNums[1], 
+                special: randNums[2], 
+                total: totalNum
+            });
+
             setInputs({
                 userName: "",
                 userNick1: "",
@@ -96,8 +113,6 @@ function Generation() {
                 userNick3: "",
             })
         };
-
-
     }
 
   return (
