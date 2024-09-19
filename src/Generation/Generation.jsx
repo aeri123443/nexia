@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {putUserData} from '../Utils/userDB.js';
+import validateData from '../Utils/dataValidation.js';
 import './css/index.css';
 
 function Generation() {
@@ -38,6 +39,7 @@ function Generation() {
 
         const strDate = `${todayMonth}/${todayDate} ${todayHours}:${todayMins}`
         setRollTime(strDate);
+        return strDate;
     };
 
     const validateGenInput = () => {
@@ -61,7 +63,9 @@ function Generation() {
     };
 
     const generateCharacter = () => {
-        createDateStr();
+        const strDate = createDateStr();
+
+        // 입력값이 존재할 경우 수행
         if (!validateGenInput()) {
             const randNums = [
                 ( Math.floor(Math.random() * 10)+1),
@@ -86,32 +90,26 @@ function Generation() {
                 resultUserTotal: `${totalNum}/${totalClass}`
             });
 
-            console.log({ 
+            const requestData = {
                 userName: inputs.userName, 
-                date: rollDate, 
+                date: strDate, 
                 level: totalClass, 
                 mental: randNums[0],
                 physical: randNums[1], 
                 special: randNums[2], 
                 total: totalNum
-            })
+            }
 
-            putUserData({ 
-                userName: inputs.userName, 
-                date: rollDate, 
-                level: totalClass, 
-                mental: randNums[0],
-                physical: randNums[1], 
-                special: randNums[2], 
-                total: totalNum
-            });
-
-            setInputs({
-                userName: "",
-                userNick1: "",
-                userNick2: "",
-                userNick3: "",
-            })
+            const isDataValidated = validateData(requestData, Object.keys({requestData})[0]);
+            if( isDataValidated ){ 
+                putUserData(requestData);
+                setInputs({
+                    userName: "",
+                    userNick1: "",
+                    userNick2: "",
+                    userNick3: "",
+                })
+            } else{ alert('Sorry. Please try it again.') };
         };
     }
 
